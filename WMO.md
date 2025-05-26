@@ -26,3 +26,5 @@
 | 22 | 118  | 0x76 | v     |       | overcast with lightning
 | 23 | 119  | 0x77 | w     |       | thunderstorm (dense)
 | 24 | 120  | 0x78 | x     |       | overcast with rain and lightning
+| 25 | 121  | 0x79 | y     |       | thermometer (extra icon)
+| 26 | 122  | 0x80 | z     |       | umbrella (extra icon)
