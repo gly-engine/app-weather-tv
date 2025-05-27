@@ -1,7 +1,7 @@
 local IconWmo = {}
 --! @todo: correct lockuptables
 local wmo_day = 'bddfhljnpbddfhljnpbddfhljnpbddfhljnpbddfhljnpbddfhljnpbddfhljnpbddfhljnpbddfhljnpbdd'
-local wmo_rain = 'yyyzyzyzzzyzyzyzzzyzyzyzzzyzyzyzzzyzyzyzzzyzyzyzzzyzyzyzzzyzyzyzzzyzyzyzzzyzyzyzzzy'
+local wmo_rain = 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyzzzyzzzzzzzzzzzzzzzyzzzzyyyyyzzzzzyyyyyyyyyzyzzzyyz'
 local wmo_night = 'acegikmoacegikmoacegikmoacegikmoacegikmoacegikmoacegikmoacegikmoacegikmoacegikmoace'
 
 function IconWmo.on_weather_api_response_day(std, data, api)
