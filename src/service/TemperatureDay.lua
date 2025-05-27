@@ -11,7 +11,7 @@ function TemperatureDay.on_weather_api_response_day(std, data, api)
             local val_3 = string.format('%.0f \194\186C', api.hourly.temperature_2m[index])
             local val_2 = os.date("%H:%M", api.hourly.time[index])
             if count == 1 then
-                val_2 = 'Agora'
+                val_2 = 'Now'
             end
             std.bus.emit(key_3, val_3)
             std.bus.emit(key_2, val_2)

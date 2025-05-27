@@ -9,9 +9,9 @@ function Options.load(std, data)
         :add(std.node.load('src/ui/components/Button.lua'))
         :apply()
 
-    data.ui_grid:get_item(1).data.label = 'Hora'
+    data.ui_grid:get_item(1).data.label = 'Hour'
     data.ui_grid:get_item(1).data.size = 20
-    data.ui_grid:get_item(2).data.label = 'Dia'
+    data.ui_grid:get_item(2).data.label = 'Day'
     data.ui_grid:get_item(2).data.size = 20
 end
 
@@ -42,7 +42,7 @@ function Menu.load(std, data)
         :add(std.node.load('src/ui/section/CurrentTemp.lua'), 3)
         :apply()
 
-    grid:get_item(11).data.label = 'Nesse momento'
+    grid:get_item(11).data.label = 'In This Moment'
     grid:get_item(11).data.size = 26
     
     while index <= 8 do

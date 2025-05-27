@@ -3,8 +3,41 @@ local App = {
     author = 'RodrigoDornelles',
     description = 'Cross-platform TV Weather Application / Widget (Ginga NCL, Tizen, WebOS)',
     version = '0.0.21',
-    require = 'http json'
+    require = 'http json i18n'
 }
+
+function App.i18n()
+    return {
+    ['pt-BR'] = {
+        ['January'] = 'Janeiro',
+        ['February'] = 'Fevereiro',
+        ['March'] = 'Março',
+        ['April'] = 'Abril',
+        ['May'] = 'Maio',
+        ['June'] = 'Junho',
+        ['July'] = 'Julho',
+        ['August'] = 'Agosto',
+        ['September'] = 'Setembro',
+        ['October'] = 'Outubro',
+        ['November'] = 'Novembro',
+        ['December'] = 'Dezembro',
+
+        ['Sunday'] = 'Domingo',
+        ['Monday'] = 'Segunda-feira',
+        ['Tuesday'] = 'Terça-feira',
+        ['Wednesday'] = 'Quarta-feira',
+        ['Thursday'] = 'Quinta-feira',
+        ['Friday'] = 'Sexta-feira',
+        ['Saturday'] = 'Sábado',
+
+        ['Now'] = 'Agora',
+        ['Hour'] = 'Hora',
+        ['Day'] = 'Dia',
+
+        ['In This Moment'] = 'Neste Momento',
+    }
+}
+end
 
 function App.load(std, data)
     std.node.spawn(std.node.load('src/api/GeoLoc'))
