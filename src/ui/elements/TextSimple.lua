@@ -20,6 +20,9 @@ function Text.draw(std, data)
         if data.padding_x then
             x = x + data.padding_x
         end
+        if data.padding_y then
+            y = y + data.padding_y
+        end
         std.text.print_ex(x, y, data.label, alignx, aligny)
     end
     if data.font then
