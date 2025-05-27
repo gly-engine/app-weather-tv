@@ -17,6 +17,7 @@ function BigDay.load(std, data)
     while index <= #order do
         local node = grid:get_item(order[index])
         node.data.padding_x = data.info_padding_x or 0
+        node.data.padding_y = data.info_padding_y or 0
         node.data.size = hem
         node.data.font = data.fonts and data.fonts[index]
         node.data.label = data.labels and data.labels[index]

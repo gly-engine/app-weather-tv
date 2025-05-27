@@ -6,7 +6,8 @@ function CurrentTemp.load(std, data)
         :margin(50)
         :add(std.node.load('src/ui/elements/TextSimple.lua'),2)
         :add(std.node.load('src/ui/widgets/BigDay.lua'))
-        :add(std.node.load('src/ui/widgets/BigDay.lua'))
+        -- :add(std.node.load('src/ui/widgets/BigDay.lua'))
+        :add(std.node.load('src/ui/components/Icon.lua'))
         :apply()
 
     local node = grid:get_item(1)
@@ -18,13 +19,21 @@ function CurrentTemp.load(std, data)
     temp.data.labels = {'00', '\194\186C'}
     temp.data.listeners = {'put_current_temperature'}
     temp.data.int_padding = 20
-    temp.data.info_padding_x = 70
+    temp.data.info_padding_x = 65
+    temp.data.info_padding_y = 8
 
-    local wmo = grid:get_item(3)
-    wmo.data.fonts = {'Weather'}
-    wmo.data.labels = {'.'}
-    wmo.data.listeners = {'put_current_icon_wmo'}
-    wmo.data.int_padding = 30
+    -- local wmo = grid:get_item(3)
+    -- wmo.data.fonts = {'Weather'}
+    -- wmo.data.labels = {'.'}
+    -- wmo.data.listeners = {'put_current_icon_wmo'}
+    -- wmo.data.int_padding = 30
+
+    local icon = grid:get_item(3)
+    icon.data.format = 'assets/icon-ww%s-64x64.png'
+    icon.data.listen = 'put_current_icon_wmo'
+    icon.data.center_x = true
+    icon.data.img_width = 64
+    icon.data.img_height = 64
 end
 
 
