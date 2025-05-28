@@ -18,7 +18,7 @@ end
 function Home_btn.load(std, data)
     data.ui_grid = std.ui.grid('1x1')
         :gap(15)
-        :add(std.node.load('src/ui/components/Icon.lua'))
+        :add(std.node.load('src/ui/components/Button.lua'))
         :apply()
         
     data.ui_grid:get_item(1).data.src = 'assets/home_icon.png'
