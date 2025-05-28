@@ -8,7 +8,7 @@ function IconWmo.on_weather_api_response_day(std, data, api)
 
     if api.current and api.current.precipitation_probability then
         local umbrella_needed = api.current.precipitation_probability >= 30
-        std.bus.emit('put_current_icon_wmo', umbrella_required and 'z' or 'y')    
+        std.bus.emit('put_current_icon_wmo', umbrella_needed and 'z' or 'y')    
     end
     
     while api.hourly and index <= #api.hourly.time and count <= 8 do
