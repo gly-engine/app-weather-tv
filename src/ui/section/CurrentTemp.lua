@@ -13,14 +13,13 @@ function CurrentTemp.load(std, data)
     local node = grid:get_item(1)
     node.data.size = data.size
     node.data.label = data.label
-    node.data.center_x = true
+    node.data.right_align = true
 
     local temp = grid:get_item(2)
     temp.data.labels = {'00', '\194\186C'}
     temp.data.listeners = {'put_current_temperature'}
-    temp.data.int_padding = 20
+    node.data.right_align = true
     temp.data.info_padding_x = 65
-    temp.data.info_padding_y = 8
 
     -- local wmo = grid:get_item(3)
     -- wmo.data.fonts = {'Weather'}
