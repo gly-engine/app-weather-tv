@@ -52,7 +52,8 @@ local assets = {
     'assets/icon-wwz-64x64.png:assets/icon-wwz-64x64.png',
     'assets/opening_background.png:assets/opening_background.png',
     'assets/Pe-icon-7-weather.ttf:Pe-icon-7-weather.ttf',
-    'assets/home_icon.png:assets/home_icon.png'
+    'assets/home_icon.png:assets/home_icon.png',
+    'assets/navigation.png:assets/navigation.png',
 }
 
 return assets
