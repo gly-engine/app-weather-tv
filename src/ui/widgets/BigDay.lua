@@ -26,8 +26,9 @@ function BigDay.load(std, data)
         index = index + 1
     end
 
-    grid:get_item(1).data.size = 88
+    grid:get_item(1).data.size = 100
     grid:get_item(1).data.padding_x = data.int_padding or 0
+    grid:get_item(1).data.padding_y = -10
 end
 
 return BigDay
