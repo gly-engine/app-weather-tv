@@ -19,6 +19,7 @@ function BigDay.load(std, data)
         node.data.padding_x = data.info_padding_x or 0
         node.data.padding_y = data.info_padding_y or 0
         node.data.size = hem
+        node.data.color = data.color or std.color.white
         node.data.font = data.fonts and data.fonts[index]
         node.data.label = data.labels and data.labels[index]
         node.data.listen = data.listeners and data.listeners[index]

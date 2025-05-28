@@ -12,12 +12,14 @@ function CurrentTemp.load(std, data)
 
     local node = grid:get_item(1)
     node.data.size = data.size
+    node.data.color = std.color.skyblue
     node.data.label = data.label
     node.data.center_x = true
 
     local temp = grid:get_item(2)
     temp.data.labels = {'00', '\194\186C'}
     temp.data.listeners = {'put_current_temperature'}
+    temp.data.color = std.color.skyblue
     temp.data.info_padding_x = 45
 
     -- local wmo = grid:get_item(3)
@@ -30,7 +32,7 @@ function CurrentTemp.load(std, data)
     icon.data.format = 'assets/icon-ww%s-64x64.png'
     icon.data.listen = 'put_current_icon_wmo'
     icon.data.center_x = true
-    icon.data.img_width = 53
+    icon.data.img_width = 64
     icon.data.img_height = 64
 end
 
