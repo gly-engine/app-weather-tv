@@ -16,6 +16,10 @@ end
 function Btn.draw(std, data)
     std.draw.color(0x4a434dFF)
     std.draw.rect(0, 0, 0, data.width, data.height)
+    if data.selected then
+        std.draw.color(std.color.white)
+        std.draw.rect(1, -2, -2, data.width+2, data.height+2)
+    end
 end
 
 return Btn

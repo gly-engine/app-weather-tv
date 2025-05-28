@@ -18,6 +18,10 @@ function Icon.draw(std, data)
     if data.src and #data.src > 0 then
         std.draw.image(data.src, x, y)
     end
+    if data.selected then
+        std.draw.color(std.color.white)
+        std.draw.rect(1, -2, -2, data.width+2, data.height+2)
+    end
 end
 
 return Icon
