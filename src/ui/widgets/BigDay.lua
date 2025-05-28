@@ -12,7 +12,7 @@ function BigDay.load(std, data)
     
     local index = 1
     local order = {1, 3, 4, 5}
-    local hem = data.height/3
+    local hem = data.height/2
 
     while index <= #order do
         local node = grid:get_item(order[index])
@@ -22,10 +22,11 @@ function BigDay.load(std, data)
         node.data.font = data.fonts and data.fonts[index]
         node.data.label = data.labels and data.labels[index]
         node.data.listen = data.listeners and data.listeners[index]
+        node.data.right_align = data.right_align
         index = index + 1
     end
 
-    grid:get_item(1).data.size = data.height
+    grid:get_item(1).data.size = 88
     grid:get_item(1).data.padding_x = data.int_padding or 0
 end
 

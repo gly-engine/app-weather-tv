@@ -10,9 +10,9 @@ function Options.load(std, data)
         :apply()
 
     data.ui_grid:get_item(1).data.label = 'Hour'
-    data.ui_grid:get_item(1).data.size = 20
+    data.ui_grid:get_item(1).data.size = 32
     data.ui_grid:get_item(2).data.label = 'Day'
-    data.ui_grid:get_item(2).data.size = 20
+    data.ui_grid:get_item(2).data.size = 32
 end
 
 function Return_btn.load(std, data)
@@ -43,7 +43,7 @@ function Menu.load(std, data)
         :apply()
 
     grid:get_item(11).data.label = 'In This Moment'
-    grid:get_item(11).data.size = 26
+    grid:get_item(11).data.size = 36
     
     while index <= 8 do
         grid:get_item(index + 2).data.pattern = string.format('put_%d_%%d_calendar', index)
