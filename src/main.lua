@@ -1,3 +1,5 @@
+local assets = require('src/data/assets')
+
 local App = {
     title = 'Weather TV',
     author = 'RodrigoDornelles',
@@ -7,36 +9,10 @@ local App = {
 }
 
 function App.i18n()
+    local pt = require('src/data/i18n/pt')
     return {
-    ['pt-BR'] = {
-        ['January'] = 'Janeiro',
-        ['February'] = 'Fevereiro',
-        ['March'] = 'Março',
-        ['April'] = 'Abril',
-        ['May'] = 'Maio',
-        ['June'] = 'Junho',
-        ['July'] = 'Julho',
-        ['August'] = 'Agosto',
-        ['September'] = 'Setembro',
-        ['October'] = 'Outubro',
-        ['November'] = 'Novembro',
-        ['December'] = 'Dezembro',
-
-        ['Sunday'] = 'Domingo',
-        ['Monday'] = 'Segunda-feira',
-        ['Tuesday'] = 'Terça-feira',
-        ['Wednesday'] = 'Quarta-feira',
-        ['Thursday'] = 'Quinta-feira',
-        ['Friday'] = 'Sexta-feira',
-        ['Saturday'] = 'Sábado',
-
-        ['Now'] = 'Agora',
-        ['Hour'] = 'Hora',
-        ['Day'] = 'Dia',
-
-        ['In This Moment'] = 'Neste Momento',
+        ['pt-BR'] = pt
     }
-}
 end
 
 function App.load(std, data)
@@ -54,61 +30,6 @@ App.fonts = {
     'Weather:Pe-icon-7-weather.ttf'
 }
 
-App.assets = {
-    'assets/clean-day.jpg:clean-day.jpg',
-    'assets/icon-wwa-40x40.png:assets/icon-wwa-40x40.png',
-    'assets/icon-wwb-40x40.png:assets/icon-wwb-40x40.png',
-    'assets/icon-wwc-40x40.png:assets/icon-wwc-40x40.png',
-    'assets/icon-wwd-40x40.png:assets/icon-wwd-40x40.png',
-    'assets/icon-wwe-40x40.png:assets/icon-wwe-40x40.png',
-    'assets/icon-wwf-40x40.png:assets/icon-wwf-40x40.png',
-    'assets/icon-wwg-40x40.png:assets/icon-wwg-40x40.png',
-    'assets/icon-wwh-40x40.png:assets/icon-wwh-40x40.png',
-    'assets/icon-wwi-40x40.png:assets/icon-wwi-40x40.png',
-    'assets/icon-wwj-40x40.png:assets/icon-wwj-40x40.png',
-    'assets/icon-wwk-40x40.png:assets/icon-wwk-40x40.png',
-    'assets/icon-wwl-40x40.png:assets/icon-wwl-40x40.png',
-    'assets/icon-wwm-40x40.png:assets/icon-wwm-40x40.png',
-    'assets/icon-wwn-40x40.png:assets/icon-wwn-40x40.png',
-    'assets/icon-wwo-40x40.png:assets/icon-wwo-40x40.png',
-    'assets/icon-wwp-40x40.png:assets/icon-wwp-40x40.png',
-    'assets/icon-wwq-40x40.png:assets/icon-wwq-40x40.png',
-    'assets/icon-wwe-40x40.png:assets/icon-wwe-40x40.png',
-    'assets/icon-wwr-40x40.png:assets/icon-wwr-40x40.png',
-    'assets/icon-wws-40x40.png:assets/icon-wws-40x40.png',
-    'assets/icon-wwt-40x40.png:assets/icon-wwt-40x40.png',
-    'assets/icon-wwu-40x40.png:assets/icon-wwu-40x40.png',
-    'assets/icon-wwv-40x40.png:assets/icon-wwv-40x40.png',
-    'assets/icon-www-40x40.png:assets/icon-www-40x40.png',
-    'assets/icon-wba-40x40.png:assets/icon-wba-40x40.png',
-    'assets/icon-wbb-40x40.png:assets/icon-wbb-40x40.png',
-    'assets/icon-wbc-40x40.png:assets/icon-wbc-40x40.png',
-    'assets/icon-wbd-40x40.png:assets/icon-wbd-40x40.png',
-    'assets/icon-wbe-40x40.png:assets/icon-wbe-40x40.png',
-    'assets/icon-wbf-40x40.png:assets/icon-wbf-40x40.png',
-    'assets/icon-wbg-40x40.png:assets/icon-wbg-40x40.png',
-    'assets/icon-wbh-40x40.png:assets/icon-wbh-40x40.png',
-    'assets/icon-wbi-40x40.png:assets/icon-wbi-40x40.png',
-    'assets/icon-wbj-40x40.png:assets/icon-wbj-40x40.png',
-    'assets/icon-wbk-40x40.png:assets/icon-wbk-40x40.png',
-    'assets/icon-wbl-40x40.png:assets/icon-wbl-40x40.png',
-    'assets/icon-wbm-40x40.png:assets/icon-wbm-40x40.png',
-    'assets/icon-wbn-40x40.png:assets/icon-wbn-40x40.png',
-    'assets/icon-wbo-40x40.png:assets/icon-wbo-40x40.png',
-    'assets/icon-wbp-40x40.png:assets/icon-wbp-40x40.png',
-    'assets/icon-wbq-40x40.png:assets/icon-wbq-40x40.png',
-    'assets/icon-wbe-40x40.png:assets/icon-wbe-40x40.png',
-    'assets/icon-wbr-40x40.png:assets/icon-wbr-40x40.png',
-    'assets/icon-wbs-40x40.png:assets/icon-wbs-40x40.png',
-    'assets/icon-wbt-40x40.png:assets/icon-wbt-40x40.png',
-    'assets/icon-wbu-40x40.png:assets/icon-wbu-40x40.png',
-    'assets/icon-wbv-40x40.png:assets/icon-wbv-40x40.png',
-    'assets/icon-wbw-40x40.png:assets/icon-wbw-40x40.png',
-    'assets/icon-wwy-64x64.png:assets/icon-wwy-64x64.png',
-    'assets/icon-wwz-64x64.png:assets/icon-wwz-64x64.png',
-    'assets/opening_background.png:assets/opening_background.png',
-    'assets/Pe-icon-7-weather.ttf:Pe-icon-7-weather.ttf',
-    'assets/home_icon.png:assets/home_icon.png'
-}
+App.assets = assets
 
 return App
