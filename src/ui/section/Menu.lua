@@ -1,6 +1,6 @@
 local Menu = {}
 local Options = {}
-local Return_btn = {}
+local Home_btn = {}
 
 function Options.load(std, data)
     data.ui_grid = std.ui.grid('1x2')
@@ -15,21 +15,26 @@ function Options.load(std, data)
     data.ui_grid:get_item(2).data.size = 32
 end
 
-function Return_btn.load(std, data)
+function Home_btn.load(std, data)
     data.ui_grid = std.ui.grid('1x1')
-        :gap(25)
-        :add(std.node.load('src/ui/components/BackButton.lua'))
+        :gap(15)
+        :add(std.node.load('src/ui/components/Icon.lua'))
         :apply()
         
     data.ui_grid:get_item(1).data.src = 'assets/home_icon.png'
-    data.ui_grid:get_item(1).data.label = 'Home'
+    data.ui_grid:get_item(1).data.center_x = true
+    data.ui_grid:get_item(1).data.center_y = true
+    data.ui_grid:get_item(1).data.img_width = 65
+    data.ui_grid:get_item(1).data.img_height = 65
+    data.ui_grid:get_item(1).data.selected = true
+
 end
 
 function Menu.load(std, data)
     local index = 1
 
     local grid = std.ui.grid('14x1')
-        :add(Return_btn)
+        :add(Home_btn)
         :add(Options, 2)
         :add(std.node.load('src/ui/widgets/Calendar.lua'))
         :add(std.node.load('src/ui/widgets/Calendar.lua'))
@@ -56,6 +61,7 @@ function Menu.draw(std, data)
     std.draw.color(0x2C292EFF)
     std.draw.rect(0, 0, 40, data.width, data.height)
     std.draw.image('assets/opening_background.png',0,-294)
+    std.draw.image('assets/navigation.png',10,-90)
 end
 
 return Menu
