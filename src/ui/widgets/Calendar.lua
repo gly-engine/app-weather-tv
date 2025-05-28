@@ -1,7 +1,7 @@
 local Calendar = {}
 
 function Calendar.load(std, data)
-    local color = data.inverse and std.color.darkgray
+    local color = data.inverse and std.color.white
     local index = 1
     local grid = std.ui.grid('1x3')
         :add(std.node.load('src/ui/components/Icon.lua'))
@@ -27,7 +27,7 @@ function Calendar.load(std, data)
     -- icon.data.size = 36
 
     local icon = grid:get_item(1)
-    icon.data.format = (data.inverse and 'assets/icon-wb%s-40x40.png') or 'assets/icon-ww%s-40x40.png'
+    icon.data.format = 'assets/icon-ww%s-40x40.png'
     icon.data.center_x = true
     icon.data.center_y = true
     icon.data.img_width = 40
@@ -36,7 +36,7 @@ end
 
 function Calendar.draw(std, data)
     if data.inverse then
-        std.draw.color(0xFFFFFF99)
+        std.draw.color(0x2b2833FF)
         std.draw.rect(0, 0, 0, data.width, data.height)
     end
 end
