@@ -16,7 +16,7 @@ function IconWmo.on_weather_api_response_day(std, data, api)
             local is_day = api.hourly.is_day[index]
             local wmo = api.hourly.weather_code[index] + 1
             local key = string.format('put_%d_1_calendar', count)
-            std.bus.emit(key, (is_day and wmo_day or wmo_night):sub(wmo, wmo))
+            std.bus.emit(key, (is_day == 1 and wmo_day or wmo_night):sub(wmo, wmo))
             count = count + 1
         end
         index = index + 1
