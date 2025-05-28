@@ -1,16 +1,14 @@
 local IconWmo = {}
---! @todo: correct lockuptables
-local wmo_day = 'bddfhljnpbddfhljnpbddfhljnpbddfhljnpbddfhljnpbddfhljnpbddfhljnpbddfhljnpbddfhljnpbdd'
-local wmo_rain = 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyzzzyzzzzzzzzzzzzzzzyzzzzyyyyyzzzzzyyyyyyyyyzyzzzyyz'
-local wmo_night = 'acegikmoacegikmoacegikmoacegikmoacegikmoacegikmoacegikmoacegikmoacegikmoacegikmoace'
+local wmo_day = 'bbjrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrfrrurrdrdrdssrrrdrlrlllrrrururururrtttrruurrrrrrrrxxrrx'
+local wmo_night = 'aairrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrerrurrcrcrcssrrrcrkrkkkrrrururururrtttrruurrrrrrrrxxrrx'
 
 function IconWmo.on_weather_api_response_day(std, data, api)
     local index, count = 1, 1
     local timestamp = os.time()
 
-    if api.current then
-        local wmo = api.current.weather_code + 1
-        std.bus.emit('put_current_icon_wmo', wmo_rain:sub(wmo, wmo))    
+    if api.current and api.current.precipitation_probability then
+        local umbrella_needed = api.current.precipitation_probability >= 30
+        std.bus.emit('put_current_icon_wmo', umbrella_required and 'z' or 'y')    
     end
     
     while api.hourly and index <= #api.hourly.time and count <= 8 do
