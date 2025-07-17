@@ -4,3 +4,5 @@ vendor
 dist
 *.lua
 !src/**/*.lua
+package-lock.json
+node_modules
