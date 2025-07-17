@@ -3,3 +3,5 @@ Thumbs.db
 vendor
 dist
 cli.lua
+package-lock.json
+node_modules
