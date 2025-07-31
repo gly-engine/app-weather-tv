@@ -12,7 +12,7 @@ function Text.draw(std, data)
         data.padding = 0
     end
     local p2 = data.padding + data.padding
-    std.text.font_size(22)
+    std.text.font_size(18)
     if not data.label_width then
         data.label_width, data.label_height = std.text.mensure(data.label)
     end

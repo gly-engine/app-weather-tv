@@ -8,14 +8,13 @@ function Calendar.load(std, data)
         -- :add(std.node.load('src/ui/elements/TextSimple.lua'))
         :add(std.node.load('src/ui/elements/TextSimple.lua'))
         :add(std.node.load('src/ui/elements/TextSimple.lua'))
-        :apply()
 
     while index <= 3 do
         local text = grid:get_item(index)
         text.data.listen = string.format(data.pattern, index)
         text.data.color = color
         text.data.label = '.'
-        text.data.size = 28
+        text.data.size = 24
         text.data.center_x = true
         text.data.center_y = true
         index = index + 1
