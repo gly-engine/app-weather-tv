@@ -3,7 +3,6 @@ local Btn = {}
 function Btn.load(std, data)
     data.ui_grid = std.ui.grid('1x1')
         :add(std.node.load('src/ui/elements/TextSimple.lua'))
-        :apply()
 
     data.text = data.ui_grid:get_item(1)
     data.text.data.label = data.label
@@ -51,7 +50,7 @@ function Btn.draw(std, data)
         y = (data.height/2) - (data.img_height/2)
     end
     if data.src and #data.src > 0 then
-        std.draw.image(data.src, x, y)
+        std.image.draw(data.src, x, y)
     end
 end
 

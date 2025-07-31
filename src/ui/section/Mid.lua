@@ -4,7 +4,6 @@ function Mid.load(std, data)
     local grid = std.ui.grid('14x1')
         :add({},11)
         :add(std.node.load('src/ui/section/MenuInfos.lua'), 3)
-        :apply()
 
     local info = grid:get_item(1)
     info.data.background = false

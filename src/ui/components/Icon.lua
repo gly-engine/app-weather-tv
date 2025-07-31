@@ -16,7 +16,7 @@ function Icon.draw(std, data)
         y = (data.height/2) - (data.img_height/2)
     end
     if data.src and #data.src > 0 then
-        std.draw.image(data.src, x, y)
+        std.image.draw(data.src, x, y)
     end
 end
 

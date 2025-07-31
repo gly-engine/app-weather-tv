@@ -8,7 +8,7 @@ function Image.draw(std, data)
     if data.center_y and data.img_height then
         y = (data.height/2) - (data.img_height/2)
     end
-    std.draw.image(data.src, x, y)
+    std.image.draw(data.src, x, y)
 end
 
 return Image

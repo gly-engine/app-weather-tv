@@ -12,7 +12,6 @@ function Home.load(std, data)
         :add({})
         :add(std.node.load('src/ui/section/Mid.lua'))
         :add(std.node.load('src/ui/section/Menu.lua'))
-        :apply()
 end
 
 function Home.draw(std, data)
