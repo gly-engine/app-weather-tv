@@ -15,7 +15,7 @@ function App.i18n()
     }
 end
 
-function App.load(std, data)
+function App:load(std)
     std.node.spawn(std.node.load('src/api/GeoLoc'))
     std.node.spawn(std.node.load('src/api/Weather'))
     std.node.spawn(std.node.load('src/service/IconWmo'))

@@ -20,7 +20,7 @@ local function geoloc_success(std, data)
     std.bus.emit('on_geolocation_init', std.http.body.lat, std.http.body.lon)
 end
 
-function GeoLoc.init(std, data)
+function GeoLoc:init(std)
     std.http.get(base_url):json()
         :param('fields', 'country,region,city,lat,lon')
         :param('lang', 'pt-BR')

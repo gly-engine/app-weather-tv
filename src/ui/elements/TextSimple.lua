@@ -1,34 +1,34 @@
 local Text = {}
 
-function Text.load(std, data)
-    std.bus.listen(data.listen, function(label)
-        data.label = label
+function Text:load(std)
+    std.bus.listen(self.listen, function(label)
+        self.label = label
     end)
 end
 
-function Text.draw(std, data)
-    std.draw.color(data.color or std.color.white)
-    if data.font then
-        std.text.font_name(data.font)
+function Text:draw(std)
+    std.draw.color(self.color or std.color.white)
+    if self.font then
+        std.text.font_name(self.font)
     end
-    if data.size and data.label then
-        local alignx = data.center_x and 0 or 1
-        local aligny = data.center_y and 0 or 1
-        aligny = data.bottom_align and -1 or aligny
-        alignx = data.right_align and -1 or alignx
-        local x = data.center_x and (data.width/2) or 0
-        local y = data.center_y and (data.height/2) or 0
-        x = data.right_align and data.width or x
-        std.text.font_size(data.size)
-        if data.padding_x then
-            x = x + data.padding_x
+    if self.size and self.label then
+        local alignx = self.center_x and 0 or 1
+        local aligny = self.center_y and 0 or 1
+        aligny = self.bottom_align and -1 or aligny
+        alignx = self.right_align and -1 or alignx
+        local x = self.center_x and (self.width/2) or 0
+        local y = self.center_y and (self.height/2) or 0
+        x = self.right_align and self.width or x
+        std.text.font_size(self.size)
+        if self.padding_x then
+            x = x + self.padding_x
         end
-        if data.padding_y then
-            y = y + data.padding_y
+        if self.padding_y then
+            y = y + self.padding_y
         end
-        std.text.print_ex(x, y, data.label, alignx, aligny)
+        std.text.print_ex(x, y, self.label, alignx, aligny)
     end
-    if data.font then
+    if self.font then
         std.text.font_name('Plex')
     end
 end

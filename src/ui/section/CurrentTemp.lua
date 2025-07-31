@@ -1,7 +1,7 @@
 
 local CurrentTemp = {}
 
-function CurrentTemp.load(std, data)
+function CurrentTemp:load(std)
     local grid = std.ui.grid('3x2')
         :add(std.node.load('src/ui/elements/TextSimple.lua'),3)
         :add(std.node.load('src/ui/widgets/BigDay.lua'),3)
@@ -14,9 +14,9 @@ function CurrentTemp.load(std, data)
         :add_items(grid:get_items())
 
     local node = grid:get_item(1)
-    node.data.size = data.size
+    node.data.size = self.size
     node.data.color = std.color.skyblue
-    node.data.label = data.label
+    node.data.label = self.label
     node.data.center_x = true
 
     local temp = grid:get_item(2)
@@ -32,7 +32,7 @@ function CurrentTemp.load(std, data)
 end
 
 
--- function CurrentTemp.draw(std, data)
+-- function CurrentTemp:draw(std)
 --     std.draw.color(0x2C292EFF)
 --     std.draw.rect(0, 0, 0, data.width, data.height)
 -- end

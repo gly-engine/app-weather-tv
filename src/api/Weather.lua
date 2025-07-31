@@ -9,7 +9,7 @@ local function weather_week(std, data)
     std.bus.emit('on_weather_api_response_week', std.http.body)
 end
 
-function WeatherApi.on_geolocation_init(std, data, latitude, longitude)
+function WeatherApi:on_geolocation_init(std, latitude, longitude)
     std.http.get(base_url):json()
         :param('latitude', tostring(latitude))
         :param('longitude', tostring(longitude))

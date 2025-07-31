@@ -2,37 +2,37 @@ local Menu = {}
 local Options = {}
 local Home_btn = {}
 
-function Options.load(std, data)
-    data.ui_grid = std.ui.grid('1x2')
+function Options:load(std)
+    self.ui_grid = std.ui.grid('1x2')
         :add(std.node.load('src/ui/components/Button.lua'))
         :add(std.node.load('src/ui/components/Button.lua'))
 
     std.ui.style('margin10', {margin = 10})
-        :add_items(data.ui_grid:get_items())
+        :add_items(self.ui_grid:get_items())
 
-    data.ui_grid:get_item(1).data.label = 'Hour'
-    data.ui_grid:get_item(1).data.size = 26
-    data.ui_grid:get_item(2).data.label = 'Day'
-    data.ui_grid:get_item(2).data.size = 26
+    self.ui_grid:get_item(1).data.label = 'Hour'
+    self.ui_grid:get_item(1).data.size = 26
+    self.ui_grid:get_item(2).data.label = 'Day'
+    self.ui_grid:get_item(2).data.size = 26
 end
 
-function Home_btn.load(std, data)
-    data.ui_grid = std.ui.grid('1x1')
+function Home_btn:load(std)
+    self.ui_grid = std.ui.grid('1x1')
         :add(std.node.load('src/ui/components/Button.lua'))
 
     std.ui.style('margin10')
-        :add_items(data.ui_grid:get_items())
-        
-    data.ui_grid:get_item(1).data.src = 'assets/home_icon.png'
-    data.ui_grid:get_item(1).data.center_x = true
-    data.ui_grid:get_item(1).data.center_y = true
-    data.ui_grid:get_item(1).data.img_width = 65
-    data.ui_grid:get_item(1).data.img_height = 65
-    data.ui_grid:get_item(1).data.selected = true
+        :add_items(self.ui_grid:get_items())
+
+    self.ui_grid:get_item(1).data.src = 'assets/home_icon.png'
+    self.ui_grid:get_item(1).data.center_x = true
+    self.ui_grid:get_item(1).data.center_y = true
+    self.ui_grid:get_item(1).data.img_width = 65
+    self.ui_grid:get_item(1).data.img_height = 65
+    self.ui_grid:get_item(1).data.selected = true
 
 end
 
-function Menu.load(std, data)
+function Menu:load(std)
     local index = 1
 
     local grid = std.ui.grid('14x1')
@@ -58,9 +58,9 @@ function Menu.load(std, data)
 
     grid:get_item(3).data.inverse = true
 end
-function Menu.draw(std, data)
+function Menu:draw(std)
     std.draw.color(0x2C292EFF)
-    std.draw.rect(0, 0, 40, data.width, data.height)
+    std.draw.rect(0, 0, 40, self.width, self.height)
     std.image.draw('assets/opening_background.png',0,-294)
     std.image.draw('assets/navigation.png',10,-90)
 end

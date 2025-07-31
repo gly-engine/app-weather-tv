@@ -1,6 +1,6 @@
 local Mid = {}
 
-function Mid.load(std, data)
+function Mid:load(std)
     local grid = std.ui.grid('14x1')
         :add({},4)
         :add(std.node.load('src/ui/elements/TextSimple.lua'),4)
@@ -10,13 +10,13 @@ function Mid.load(std, data)
     local info = grid:get_item(4)
     info.data.background = false
 
-    data.city = grid:get_item(2)
-    data.city.data.listen = 'put_gelocation_str'
-    data.city.data.color = std.color.white
-    data.city.data.size = 26
-    data.city.data.right_align = true
-    data.city.data.center_y = true
-    data.city.data.padding_y = 50
+    self.city = grid:get_item(2)
+    self.city.data.listen = 'put_gelocation_str'
+    self.city.data.color = std.color.white
+    self.city.data.size = 26
+    self.city.data.right_align = true
+    self.city.data.center_y = true
+    self.city.data.padding_y = 50
 
     -- ## Another way to do it, with a side bar
         

@@ -2,7 +2,7 @@ local IconWmo = {}
 local wmo_day = 'bbjrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrfrrurrdrdrdssrrrdrlrlllrrrururururrtttrruurrrrrrrrxxrrx'
 local wmo_night = 'aairrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrerrurrcrcrcssrrrcrkrkkkrrrururururrtttrruurrrrrrrrxxrrx'
 
-function IconWmo.on_weather_api_response_day(std, data, api)
+function IconWmo:on_weather_api_response_day(std, api)
     local index, count = 1, 1
     local timestamp = os.time()
 

@@ -1,18 +1,18 @@
 local Btn = {}
 
-function Btn.load(std, data)
-    data.ui_grid = std.ui.grid('1x1')
+function Btn:load(std)
+    self.ui_grid = std.ui.grid('1x1')
         :add(std.node.load('src/ui/elements/TextSimple.lua'))
 
-    data.text = data.ui_grid:get_item(1)
-    data.text.data.label = data.label
-    data.text.data.size = data.size
-    data.text.data.font = data.font
-    data.text.data.center_x = true
-    data.text.data.center_y = true
+    self.text = self.ui_grid:get_item(1)
+    self.text.data.label = self.label
+    self.text.data.size = self.size
+    self.text.data.font = self.font
+    self.text.data.center_x = true
+    self.text.data.center_y = true
 end
 
-function Btn.draw(std, data)
+function Btn:draw(std)
     local function animation(ms, min, max, duration)
         local range  = max - min
         local period = duration * 2
@@ -25,7 +25,7 @@ function Btn.draw(std, data)
     end
     local x, y = 0, 0
 
-    if data.selected then
+    if self.selected then
         local t = animation(std.milis, 0, 1, 1000)
         -- Start: 0x2C292EFF (r=0x2c, g=0x29, b=0x2e, a=0xFF)
         -- End:   0x66BFFFFF (r=0x66, g=0xBF, b=0xFF, a=0xFF)
@@ -36,21 +36,21 @@ function Btn.draw(std, data)
         local color = r * 2^24 + g * 2^16 + b * 2^8 + a
 
         std.draw.color(color)
-        std.draw.rect(0, 0, 0, data.width, data.height)
+        std.draw.rect(0, 0, 0, self.width, self.height)
         std.draw.color(std.color.white)
-        std.draw.rect(1, -1, -1, data.width+2, data.height+2)
+        std.draw.rect(1, -1, -1, self.width+2, self.height+2)
     else
         std.draw.color(std.color.skyblue)
-        std.draw.rect(0, 0, 0, data.width, data.height)
+        std.draw.rect(0, 0, 0, self.width, self.height)
     end
-    if data.center_x and data.img_width then
-        x = (data.width/2)  - (data.img_width/2)
+    if self.center_x and self.img_width then
+        x = (self.width/2)  - (self.img_width/2)
     end
-    if data.center_y and data.img_height then
-        y = (data.height/2) - (data.img_height/2)
+    if self.center_y and self.img_height then
+        y = (self.height/2) - (self.img_height/2)
     end
-    if data.src and #data.src > 0 then
-        std.image.draw(data.src, x, y)
+    if self.src and #self.src > 0 then
+        std.image.draw(self.src, x, y)
     end
 end
 

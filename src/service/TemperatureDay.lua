@@ -1,6 +1,6 @@
 local TemperatureDay = {}
 
-function TemperatureDay.on_weather_api_response_day(std, data, api)
+function TemperatureDay:on_weather_api_response_day(std, api)
     local index, count = 1, 1
     local timestamp = os.time()
 

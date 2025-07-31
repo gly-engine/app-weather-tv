@@ -1,6 +1,6 @@
 local Home = {}
 
-function Home.load(std, data)
+function Home:load(std)
     if not love and not canvas then
         local image = std.node.load('src/ui/elements/Image.lua')
         image.data.src = 'clean-day.jpg'
@@ -14,7 +14,7 @@ function Home.load(std, data)
         :add(std.node.load('src/ui/section/Menu.lua'))
 end
 
-function Home.draw(std, data)
+function Home:draw(std)
     std.text.font_name('Plex')
 end
 
