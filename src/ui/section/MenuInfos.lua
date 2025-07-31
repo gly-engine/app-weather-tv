@@ -2,16 +2,17 @@ local MenuInfos = {}
 
 function MenuInfos.load(std, data)
     
-    data.ui_grid = std.ui.grid('5x2')
-        :margin(50)
-        :add(std.node.load('src/ui/elements/TextSimple.lua'),5)
-        :add(std.node.load('src/ui/widgets/BigDay.lua'),10)
-        :apply()
+    data.ui_grid = std.ui.grid('3x2')
+        :add(std.node.load('src/ui/elements/TextSimple.lua'),3)
+        :add(std.node.load('src/ui/widgets/BigDay.lua'),3)
+
+    std.ui.style('left_right', {left = 20, right = 10})
+        :add_items(data.ui_grid:get_items())
 
     data.city = data.ui_grid:get_item(1)
     data.city.data.listen = 'put_gelocation_str'
     data.city.data.color = std.color.white
-    data.city.data.size = 36
+    data.city.data.size = 26
     data.city.data.right_align = true
     data.city.data.center_y = true
 
@@ -22,6 +23,7 @@ function MenuInfos.load(std, data)
         os.date("%A")
     }
     data.ui_grid:get_item(2).data.right_align = true
+    data.ui_grid:get_item(2).data.center_y = true
 
 end
 
