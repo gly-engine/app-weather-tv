@@ -4,22 +4,24 @@ local Home_btn = {}
 
 function Options.load(std, data)
     data.ui_grid = std.ui.grid('1x2')
-        :gap(25)
         :add(std.node.load('src/ui/components/Button.lua'))
         :add(std.node.load('src/ui/components/Button.lua'))
-        :apply()
+
+    std.ui.style('margin10', {margin = 10})
+        :add_items(data.ui_grid:get_items())
 
     data.ui_grid:get_item(1).data.label = 'Hour'
-    data.ui_grid:get_item(1).data.size = 32
+    data.ui_grid:get_item(1).data.size = 26
     data.ui_grid:get_item(2).data.label = 'Day'
-    data.ui_grid:get_item(2).data.size = 32
+    data.ui_grid:get_item(2).data.size = 26
 end
 
 function Home_btn.load(std, data)
     data.ui_grid = std.ui.grid('1x1')
-        :gap(15)
         :add(std.node.load('src/ui/components/Button.lua'))
-        :apply()
+
+    std.ui.style('margin10')
+        :add_items(data.ui_grid:get_items())
         
     data.ui_grid:get_item(1).data.src = 'assets/home_icon.png'
     data.ui_grid:get_item(1).data.center_x = true
@@ -45,10 +47,9 @@ function Menu.load(std, data)
         :add(std.node.load('src/ui/widgets/Calendar.lua'))
         :add(std.node.load('src/ui/widgets/Calendar.lua'))
         :add(std.node.load('src/ui/section/CurrentTemp.lua'), 3)
-        :apply()
 
     grid:get_item(11).data.label = 'In This Moment'
-    grid:get_item(11).data.size = 36
+    grid:get_item(11).data.size = 30
     
     while index <= 8 do
         grid:get_item(index + 2).data.pattern = string.format('put_%d_%%d_calendar', index)
@@ -60,8 +61,8 @@ end
 function Menu.draw(std, data)
     std.draw.color(0x2C292EFF)
     std.draw.rect(0, 0, 40, data.width, data.height)
-    std.draw.image('assets/opening_background.png',0,-294)
-    std.draw.image('assets/navigation.png',10,-90)
+    std.image.draw('assets/opening_background.png',0,-294)
+    std.image.draw('assets/navigation.png',10,-90)
 end
 
 return Menu
