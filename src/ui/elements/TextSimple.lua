@@ -14,6 +14,7 @@ function Text.draw(std, data)
     if data.size and data.label then
         local alignx = data.center_x and 0 or 1
         local aligny = data.center_y and 0 or 1
+        aligny = data.bottom_align and -1 or aligny
         alignx = data.right_align and -1 or alignx
         local x = data.center_x and (data.width/2) or 0
         local y = data.center_y and (data.height/2) or 0
