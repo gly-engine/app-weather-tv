@@ -26,8 +26,8 @@ function Home_btn:load(std)
     self.ui_grid:get_item(1).data.src = 'assets/home_icon.png'
     self.ui_grid:get_item(1).data.center_x = true
     self.ui_grid:get_item(1).data.center_y = true
-    self.ui_grid:get_item(1).data.img_width = 65
-    self.ui_grid:get_item(1).data.img_height = 65
+    self.ui_grid:get_item(1).data.img_width = 97
+    self.ui_grid:get_item(1).data.img_height = 97
     self.ui_grid:get_item(1).data.selected = true
 
 end
