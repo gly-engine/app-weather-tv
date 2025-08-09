@@ -28,7 +28,7 @@ function BigDay:load(std)
         index = index + 1
     end
 
-    grid:get_item(1).data.size = 90
+    grid:get_item(1).data.size = 100
     grid:get_item(1).data.right_align = false
 end
 

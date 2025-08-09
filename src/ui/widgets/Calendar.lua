@@ -14,7 +14,7 @@ function Calendar:load(std)
         text.data.listen = string.format(self.pattern, index)
         text.data.color = color
         text.data.label = '.'
-        text.data.size = 24
+        text.data.size = 32
         text.data.center_x = true
         text.data.center_y = true
         index = index + 1

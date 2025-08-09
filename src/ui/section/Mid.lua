@@ -13,7 +13,7 @@ function Mid:load(std)
     self.city = grid:get_item(2)
     self.city.data.listen = 'put_gelocation_str'
     self.city.data.color = std.color.white
-    self.city.data.size = 26
+    self.city.data.size = 32
     self.city.data.right_align = true
     self.city.data.center_y = true
     self.city.data.padding_y = 50
