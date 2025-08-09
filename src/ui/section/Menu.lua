@@ -59,10 +59,10 @@ function Menu:load(std)
     grid:get_item(3).data.inverse = true
 end
 function Menu:draw(std)
-    std.draw.color(0x2C292EFF)
+    std.draw.color(0x28242AFF)
     std.draw.rect(0, 0, 40, self.width, self.height)
-    std.image.draw('assets/opening_background.png',0,-294)
-    std.image.draw('assets/navigation.png',10,-90)
+    std.image.draw('assets/opening_background.png',0,-479)
+    std.image.draw('assets/navigation.png',10,-135)
 end
 
 return Menu

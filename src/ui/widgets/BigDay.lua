@@ -30,6 +30,7 @@ function BigDay:load(std)
 
     grid:get_item(1).data.size = 100
     grid:get_item(1).data.right_align = false
+    grid:get_item(1).data.padding_x = 100
 end
 
 return BigDay
