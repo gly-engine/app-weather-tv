@@ -4,7 +4,7 @@ local wmo_night = 'aairrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrerrurrcrcrcssrrr
 
 function IconWmo:on_weather_api_response_day(std, api)
     local index, count = 1, 1
-    local timestamp = os.time()
+    local timestamp = 0 -- @removido por causa da SET EXPO 2025, colocar devolta novamente! os.time()
 
     if api.current and api.current.precipitation_probability then
         local umbrella_needed = api.current.precipitation_probability >= 30

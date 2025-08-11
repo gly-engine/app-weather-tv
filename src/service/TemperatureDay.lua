@@ -2,7 +2,7 @@ local TemperatureDay = {}
 
 function TemperatureDay:on_weather_api_response_day(std, api)
     local index, count = 1, 1
-    local timestamp = os.time()
+    local timestamp = 0 -- @removido por causa da SET EXPO 2025, colocar devolta novamente! os.time()
 
     while index <= #api.hourly.time and count <= 8 do
         if api.hourly.time[index] > timestamp then
