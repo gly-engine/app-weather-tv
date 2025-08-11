@@ -2,4 +2,7 @@
 Thumbs.db
 vendor
 dist
-cli.lua
+*.lua
+!src/**/*.lua
+package-lock.json
+node_modules
