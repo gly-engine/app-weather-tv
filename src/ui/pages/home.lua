@@ -1,7 +1,7 @@
 local Home = {}
 
 function Home.load(std, data)
-    local image = std.node.load('src/ui/components/Image.lua')
+    local image = std.node.load('src/ui/elements/Image.lua')
     image.data.src = 'clean-day.jpg'
     std.node.spawn(image)
 

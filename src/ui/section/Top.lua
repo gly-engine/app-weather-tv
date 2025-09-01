@@ -3,7 +3,7 @@ local Top = {}
 function Top.load(std, data)
     data.ui_grid = std.ui.grid('5x2')
         :margin(50)
-        :add(std.node.load('src/ui/components/TextOutline.lua'), 5)
+        :add(std.node.load('src/ui/elements/TextOutline.lua'), 5)
         :add(std.node.load('src/ui/widgets/BigDay.lua'))
         :apply()
 

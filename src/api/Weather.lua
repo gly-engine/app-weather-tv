@@ -17,7 +17,7 @@ function WeatherApi.on_geolocation_init(std, data, latitude, longitude)
         :param('hourly', 'is_day,weather_code,temperature_2m')
         :param('timeformat','unixtime')
         :param('timezone', 'auto')
-        :param('forecast_days', '1')
+        :param('forecast_days', '2')
         :success(weather_day)
         :run()
 end

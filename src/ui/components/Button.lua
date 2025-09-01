@@ -2,7 +2,7 @@ local Btn = {}
 
 function Btn.load(std, data)
     data.ui_grid = std.ui.grid('1x1')
-        :add(std.node.load('src/ui/components/TextSimple.lua'))
+        :add(std.node.load('src/ui/elements/TextSimple.lua'))
         :apply()
 
     data.text = data.ui_grid:get_item(1)

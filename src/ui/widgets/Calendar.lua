@@ -4,9 +4,9 @@ function Calendar.load(std, data)
     local index = 1
     local color = data.inverse and std.color.darkgray
     local grid = std.ui.grid('1x3')
-        :add(std.node.load('src/ui/components/TextSimple.lua'))
-        :add(std.node.load('src/ui/components/TextSimple.lua'))
-        :add(std.node.load('src/ui/components/TextSimple.lua'))
+        :add(std.node.load('src/ui/elements/TextSimple.lua'))
+        :add(std.node.load('src/ui/elements/TextSimple.lua'))
+        :add(std.node.load('src/ui/elements/TextSimple.lua'))
         :apply()
 
     while index <= 3 do

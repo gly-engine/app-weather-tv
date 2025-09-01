@@ -3,11 +3,11 @@ local BigDay = {}
 function BigDay.load(std, data)
     local grid = std.ui.grid('6x3')
         :dir(1)
-        :add(std.node.load('src/ui/components/TextSimple.lua'), 6)
+        :add(std.node.load('src/ui/elements/TextSimple.lua'), 6)
         :add({}, 6)
-        :add(std.node.load('src/ui/components/TextSimple.lua'))
-        :add(std.node.load('src/ui/components/TextSimple.lua'))
-        :add(std.node.load('src/ui/components/TextSimple.lua'))
+        :add(std.node.load('src/ui/elements/TextSimple.lua'))
+        :add(std.node.load('src/ui/elements/TextSimple.lua'))
+        :add(std.node.load('src/ui/elements/TextSimple.lua'))
         :apply()
     
     local index = 1
