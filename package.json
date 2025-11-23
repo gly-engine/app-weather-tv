@@ -1,6 +1,7 @@
 {
   "types": "index.d.ts",
   "type": "module",
+  "main": "src/main.lua",
   "scripts": {
     "build": "gly-cli build-html src/main.lua"
   },
